@@ -1,0 +1,8 @@
+services:
+  api:
+    build: ./backend
+    ports: ["8000:8000"]
+    environment:
+      TASKFLOW_JWT_SECRET: change-me
+      TASKFLOW_DATABASE_URL: sqlite:///./data/taskflow.db
+    volumes: ["./data:/app/data"]
